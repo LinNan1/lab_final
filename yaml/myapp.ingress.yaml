@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: myapp-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: bryn.fun.com
+    http:
+      paths:
+      - path: 
+        backend:
+          serviceName: myindex-service
+          servicePort: 5001
+      - path: /myapp
+        backend:
+          serviceName: myapp-service
+          servicePort: 5000

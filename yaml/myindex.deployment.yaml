@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myindex-deployment
+spec:
+  selector:
+    matchLabels:
+      app: myindex
+  template:
+    metadata:
+      labels:
+        app: myindex
+    spec:
+      containers:
+      - name: myindex
+        image: myindex
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 30011
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: myindex-service
+spec:
+  selector:
+    app: myindex
+  type: NodePort
+  ports:
+  - port: 5001
+    nodePort: 30011
+    

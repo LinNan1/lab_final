@@ -1,0 +1,51 @@
+<html>
+
+<head>
+   <title>中文分词小工具</title>
+   <style>
+      h1 {
+         text-align: center;
+      }
+
+      textarea {
+         width: 80%;
+         max-width: 50em;
+         display: block;
+         height: 31em;
+         padding: 1em;
+         font-size: x-large;
+         margin: 1em auto;
+      }
+
+      .btn {
+         border-radius: 0.5em;
+         border-width: 0;
+         width: 6em;
+         height: 2em;
+         font-size: x-large;
+         margin: auto;
+         background-color: #1AAD19;
+         color: white;
+         display: block;
+      }
+
+      .main {
+         width: 100%;
+         margin: auto;
+      }
+   </style>
+</head>
+
+<body>
+
+   <form action="http://192.168.1.31:30012/text_seg" method="post">
+      <h1>中文分词小工具</h1>
+      <div class="main">
+         <textarea type="text" name="text" placeholder="请输入一段文本"></textarea>
+         <input class="btn" type="submit" value="分词！" />
+      </div>
+   </form>
+
+</body>
+
+</html>
