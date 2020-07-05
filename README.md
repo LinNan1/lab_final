@@ -1,5 +1,4 @@
 # lab_final
-[TOC]
 
 ## 目录结构
 
